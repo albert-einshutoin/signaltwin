@@ -24,7 +24,7 @@ Adapter-ready MVP, and pre-hardware readiness closeout.
 | Phase 12: Baseline Store And Drift Comparison | done | `pytest` passed with 91 tests; fixture baseline snapshots, JSON storage, and repeated measurement comparison are implemented. |
 | Phase 13: No-Hardware Demo Pipeline | done | `pytest` passed with 96 tests; `python -m signaltwin.cli demo --output-dir outputs/demo` regenerates no-hardware demo artifacts. |
 | Phase 14: Mock API And Dashboard Contract | done | `pytest` passed with 100 tests; hardware-free API response and dashboard view model contracts are generated from demo artifacts. |
-| Phase 15: Pre-Hardware Readiness Closeout | done | `pytest` passed with 105 tests; pre-hardware readiness and hardware handoff criteria are documented; final hardware tasks remain unexpanded until a hardware path is selected. |
+| Phase 15: Pre-Hardware Readiness Closeout | done | `pytest` passed with 111 tests in current OSS verification; pre-hardware readiness and hardware handoff criteria are documented; final hardware tasks remain unexpanded until a hardware path is selected. |
 
 ## Global Verification Commands
 

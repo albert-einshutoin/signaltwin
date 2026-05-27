@@ -8,7 +8,13 @@ Only the current `main` branch is maintained.
 
 ## Reporting a Vulnerability
 
-Please report security issues privately through GitHub Security Advisories for this repository when available. If that is not available, open a minimal issue that does not include exploit details and ask for a private contact path.
+Please report security issues through GitHub Private Vulnerability Reporting:
+
+```txt
+https://github.com/albert-einshutoin/signaltwin/security/advisories/new
+```
+
+Do not publish exploit details, private data, or a full proof of concept in a public issue. If GitHub Private Vulnerability Reporting is unavailable, open an issue titled `Security contact request` with no technical details and ask the maintainer to provide a private channel.
 
 Include:
 

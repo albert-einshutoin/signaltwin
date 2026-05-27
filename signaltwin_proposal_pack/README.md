@@ -30,10 +30,10 @@ It validates YAML scenarios, normalizes BMS and mock signal frames, scores build
 
 ## Sync Status
 
-This proposal pack is synchronized with the current minimal MVP implementation.
+This proposal pack is synchronized with the current hardware-free and pre-hardware implementation.
 
 - Example reports under `examples/reports/` are generated from the current `signaltwin` exporter.
-- The completion report reflects the current Phase 0-6 task board.
+- The completion report includes the original Phase 0-6 minimal MVP closeout and a Phase 7-15 pre-hardware addendum.
 - Adapter-ready MVP work is now defined as a hardware-free fixture adapter stage.
 - Hardware is still not required for adapter contract and fixture adapter validation.
 - Real hardware adapters, dashboard/API, persistence, and ML remain later work.

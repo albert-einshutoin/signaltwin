@@ -46,11 +46,9 @@ outputs/roomci_scenario.example.yml
 - Pydantic
 - YAML
 - Typer
-- pandas
-- numpy
-- scipy
-- PyOD optional
 - pytest
+
+The minimal MVP does not require pandas, numpy, scipy, PyOD, FastAPI, Streamlit, SQLite, or OpenCV. Those remain future or optional technologies for real signal processing, UI/API work, and hardware PoC stages.
 
 ### Success Criteria
 

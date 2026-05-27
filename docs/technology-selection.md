@@ -12,21 +12,20 @@ Technologies are selected based on:
 - Low-cost hardware path
 - Explainable output for maintenance decisions
 
-## 2. Minimal MVP Technology
+## 2. Current Minimal MVP Runtime
 
 | Area | Selection | Reason |
 |---|---|---|
-| Language | Python | Fastest for PoC, time-series, signal processing, ML |
-| Schema | Pydantic / JSON Schema | Strict I/O definitions |
+| Language | Python | Fast local CLI and test iteration |
+| Schema | Pydantic | Strict runtime validation for scenarios, reports, and adapter outputs |
 | Scenario | YAML | Human-readable and RoomCI-friendly |
 | CLI | Typer | Simple Python CLI |
-| Data | pandas / numpy | BMS and feature processing |
-| Signal | scipy | FFT, filtering, signal features |
-| Anomaly | PyOD | Optional anomaly score from feature vectors |
 | Testing | pytest | Fast validation |
 | Output | JSON / Markdown / YAML | CI- and GitHub-friendly |
 
-## 3. Best MVP Technology
+The current package runtime dependencies are intentionally small: Pydantic, PyYAML, and Typer. pandas, numpy, scipy, PyOD, FastAPI, Streamlit, SQLite, and OpenCV are future or optional hardware/UI stack candidates, not dependencies of the verified hardware-free MVP.
+
+## 3. Planned Hardware/UI Technology
 
 | Area | Selection | Reason |
 |---|---|---|
@@ -42,6 +41,9 @@ Technologies are selected based on:
 | Dashboard | Streamlit | Fast PoC dashboard |
 | Storage | SQLite first | Simple local storage |
 | Time-series optional | InfluxDB | Only if data volume increases |
+| Data processing | pandas / numpy | Future BMS and feature processing |
+| Signal processing | scipy | Future FFT, filtering, and signal features |
+| Anomaly detection | PyOD | Future feature-level anomaly scoring after rule-based explainability |
 
 The managed device and program assumptions for the Adapter-ready MVP are defined in `docs/device-io-assumptions.md`. That document is the source of truth for constraining fixture I/O before hardware exists.
 

@@ -30,24 +30,23 @@ SignalTwin:
   to infer material, space, communication, and maintenance risks.
 ```
 
-## MVP Stages
+## Verified MVP Layers
 
 1. **SignalTwin Scenario Engine**
    - No hardware required.
-   - Uses mock BMS and mock signal data.
+   - Uses scenario BMS context and mock signal data.
    - Produces risk reports and RoomCI scenarios.
 
-2. **SignalTwin Edge Kit**
-   - Uses small real devices.
-   - ESP32 CSI, PZT, acoustic sweep, MLX90640, and camera inputs.
-   - Validates signal drift against physical experiments.
-
-3. **Adapter-ready MVP**
+2. **Adapter-ready MVP**
    - No physical devices are required.
    - Uses `fixtures/raw/*` to imitate assumed device and program output.
    - Parses BMS, WiFi CSI, thermal, visual, acoustic, and PZT fixtures through swappable adapters.
    - Validates adapter outputs against the current SignalTwin schema before risk scoring.
    - Keeps the risk engine independent from hardware names, capture programs, and adapter modules.
+
+## Planned Hardware Stage
+
+**SignalTwin Edge Kit** is future work. It is expected to use small real devices such as ESP32 CSI, PZT, acoustic sweep, MLX90640, and camera inputs, but real-device capture, calibration, physical drift validation, dashboard hosting, and production deployment are not implemented in the current repository.
 
 ## Minimal MVP Usage
 

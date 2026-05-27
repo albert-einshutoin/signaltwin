@@ -30,24 +30,23 @@ SignalTwin:
   材料、空間、通信、保守リスクを推定する。
 ```
 
-## MVP ステージ
+## 検証済み MVP レイヤー
 
 1. **SignalTwin Scenario Engine**
    - ハードウェア不要。
-   - モック BMS とモック信号データを使用。
+   - scenario BMS context と mock signal data を使用。
    - リスクレポートと RoomCI シナリオを生成。
 
-2. **SignalTwin Edge Kit**
-   - 小型の実デバイスを使用。
-   - ESP32 CSI、PZT、音響スイープ、MLX90640、カメラ入力を使用。
-   - 物理実験に対して信号ドリフトを検証。
-
-3. **Adapter-ready MVP**
+2. **Adapter-ready MVP**
    - 物理デバイス不要。
    - `fixtures/raw/*` を使い、想定デバイスやプログラムの出力を模倣。
    - BMS、WiFi CSI、熱、画像、音響、PZT fixture を差し替え可能な adapter 経由で parse。
    - リスクスコアリング前に adapter 出力を現在の SignalTwin schema で検証。
    - risk engine を hardware 名、capture program、adapter module から独立させる。
+
+## 計画中のハードウェアステージ
+
+**SignalTwin Edge Kit** は future work です。ESP32 CSI、PZT、音響スイープ、MLX90640、カメラ入力などの小型実デバイスを使う想定ですが、現リポジトリには real-device capture、calibration、physical drift validation、dashboard hosting、production deployment は実装されていません。
 
 ## Minimal MVP の使い方
 

@@ -22,6 +22,8 @@ The project now has:
 
 ## Phase Board
 
+This table records the original minimal MVP closeout through Phase 6. Current pre-hardware status continues in the addendum below and in `../../tasks/status.md`.
+
 | Phase | Status | Exit Evidence |
 |---|---|---|
 | Phase 0: Project Baseline | done | pytest passed with 3 tests; package import, scenario fixture inventory, and generated output convention verified. |
@@ -31,6 +33,19 @@ The project now has:
 | Phase 4: Exporters | done | pytest passed with 32 tests; JSON, Markdown, and RoomCI exports validate deterministically. |
 | Phase 5: CLI Flow | done | pytest passed with 39 tests; CLI validate/run commands write deterministic outputs and report errors without tracebacks. |
 | Phase 6: MVP Readiness | done | pytest passed with 41 tests; all scenarios validate, E2E output check passes, and README usage is documented. |
+
+## Pre-Hardware Addendum
+
+After the minimal MVP closeout, SignalTwin added the hardware-free Adapter-ready MVP and pre-hardware productization layers:
+
+- Phase 7-10: adapter contracts, raw fixture contracts, fixture adapters, and adapter-to-risk E2E regression
+- Phase 11: config-driven adapter registry and `adapter inspect` CLI
+- Phase 12: fixture baseline snapshots and deterministic drift comparison
+- Phase 13: no-hardware demo pipeline
+- Phase 14: static API response and dashboard view model contracts
+- Phase 15: pre-hardware readiness and hardware handoff criteria
+
+Current full-suite verification is tracked in `../../tasks/status.md`.
 
 ## Global Verification Commands
 

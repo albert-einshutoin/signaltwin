@@ -28,6 +28,6 @@ Examples of unacceptable behavior:
 
 Project maintainers are responsible for clarifying and enforcing standards of acceptable behavior. They may remove, edit, or reject comments, commits, issues, and pull requests that do not align with this Code of Conduct.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported through the repository maintainers. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the repository maintainer. If no private maintainer contact is published, open an issue titled `Code of Conduct contact request` with no sensitive details and ask for a private channel. All complaints will be reviewed and investigated promptly and fairly.
 
 This Code of Conduct is adapted from the Contributor Covenant, version 2.1.
