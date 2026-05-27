@@ -1,5 +1,7 @@
 # SignalTwin MVP
 
+[日本語版](README.ja.md)
+
 SignalTwin is a **Building Health Forecast Engine** that uses existing BMS time-series data plus non-BMS signal inputs such as WiFi CSI, PZT vibration, acoustic sweep, visual inspection, and thermal surface maps to estimate building deterioration, moisture, mold/moss risk, communication drift, and maintenance priority.
 
 SignalTwin does **not** replace BMS. It uses BMS as an input layer and adds a higher-level interpretation layer for building health.
