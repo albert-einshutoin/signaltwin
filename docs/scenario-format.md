@@ -1,0 +1,94 @@
+# SignalTwin Scenario Format
+
+SignalTwin scenarios are YAML files that describe a building/asset condition and synthetic or real signal frames.
+
+## Example
+
+```yaml
+scenario: rainy_season_wood_wall_risk
+
+building:
+  id: villa-a
+  location_type: coastal
+  age_years: 4
+
+asset:
+  id: room-101-north-wall
+  type: interior_wall
+  orientation: north
+  material:
+    surface: cedar_panel
+    backing: concrete
+  vulnerability:
+    moisture: high
+    mold: medium
+    deformation: medium
+
+maintenance:
+  last_inspection_days_ago: 180
+  last_cleaning_days_ago: 240
+  last_repair_days_ago: 900
+
+bms:
+  temperature_7d_avg_c: 24.2
+  humidity_7d_avg_percent: 82
+  illuminance_7d_avg_lux: 110
+  sound_level_7d_avg_db: 38
+  motion_hours_7d: 18
+  flow_events_7d: 32
+  hvac_on_hours_7d: 88
+  dehumidify_on_hours_7d: 36
+
+signals:
+  wifi_csi:
+    csi_drift_score: 0.18
+    snr_delta_db: -4.2
+    baseline_similarity: 0.82
+
+  pzt:
+    resonance_shift_percent: 6.8
+    attenuation_delta: 0.21
+    baseline_similarity: 0.71
+
+  acoustic:
+    frequency_response_drift: 0.19
+    rt60_delta_percent: 8.1
+
+  thermal:
+    dew_point_margin_min_c: 1.2
+    cold_spot_count: 4
+    thermal_gradient_score: 0.31
+
+  visual:
+    detected_defects:
+      - type: moss
+        severity: 0.32
+        area_ratio: 0.04
+      - type: hairline_crack
+        severity: 0.24
+        length_m: 1.2
+
+expected:
+  moisture_risk: high
+  mold_risk: medium_high
+  maintenance_recommendation: inspect_within_30_days
+```
+
+## Required Sections
+
+- `scenario`
+- `building`
+- `asset`
+- `maintenance`
+- `bms`
+- `signals`
+- `expected`
+
+## Design Principle
+
+The scenario should express both:
+
+1. What BMS already knows.
+2. What SignalTwin adds as non-BMS signal context.
+
+This enables testing without physical devices.

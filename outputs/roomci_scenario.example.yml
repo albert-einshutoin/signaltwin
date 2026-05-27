@@ -1,0 +1,29 @@
+scenario: signaltwin_rainy_season_wood_wall_risk
+
+description: >
+  Simulates a rainy-season moisture risk condition for a north-facing cedar wall.
+  BMS values are normal device/environment values. SignalTwin adds non-BMS
+  signal drift evidence.
+
+inputs:
+  bms:
+    humidity_7d_avg_percent: 82
+    temperature_7d_avg_c: 24.2
+    hvac_on_hours_7d: 88
+    dehumidify_on_hours_7d: 36
+  signaltwin:
+    wifi_csi:
+      csi_drift_score: 0.18
+      baseline_similarity: 0.82
+    pzt:
+      attenuation_delta: 0.21
+      resonance_shift_percent: 6.8
+    thermal:
+      dew_point_margin_min_c: 1.2
+      cold_spot_count: 4
+
+expected:
+  risk_report:
+    moisture_risk: high
+    mold_risk: medium_high
+    recommendation: inspect_within_30_days

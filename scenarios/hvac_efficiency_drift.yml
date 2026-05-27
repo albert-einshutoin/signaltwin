@@ -1,0 +1,46 @@
+scenario: hvac_efficiency_and_comfort_drift
+
+building:
+  id: villa-c
+  location_type: urban
+  age_years: 6
+
+asset:
+  id: room-301-hvac-zone
+  type: hvac_zone
+  orientation: west
+  material:
+    surface: plaster_board
+    backing: insulation
+  vulnerability:
+    heat_gain: medium
+    comfort_degradation: medium
+
+maintenance:
+  last_filter_cleaning_days_ago: 150
+  last_inspection_days_ago: 120
+
+bms:
+  temperature_7d_avg_c: 25.4
+  humidity_7d_avg_percent: 72
+  illuminance_7d_avg_lux: 260
+  motion_hours_7d: 51
+  current_amp_avg: 3.4
+  hvac_on_hours_7d: 104
+  dehumidify_on_hours_7d: 44
+
+signals:
+  thermal:
+    dew_point_margin_min_c: 2.4
+    cold_spot_count: 1
+    thermal_gradient_score: 0.42
+  acoustic:
+    frequency_response_drift: 0.08
+    unusual_noise_score: 0.31
+  wifi_csi:
+    csi_drift_score: 0.09
+    baseline_similarity: 0.91
+
+expected:
+  comfort_degradation_risk: medium_high
+  maintenance_recommendation: inspect_hvac_filter_and_airflow

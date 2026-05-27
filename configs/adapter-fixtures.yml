@@ -1,0 +1,25 @@
+sources:
+  - name: bms-fixture
+    adapter: bms_csv
+    normalized_key: bms
+    path: fixtures/raw/bms_context.csv
+  - name: wifi-csi-fixture
+    adapter: wifi_csi_csv
+    normalized_key: wifi_csi
+    path: fixtures/raw/wifi_csi.csv
+  - name: thermal-fixture
+    adapter: thermal_json
+    normalized_key: thermal
+    path: fixtures/raw/thermal_matrix.json
+  - name: visual-fixture
+    adapter: visual_json
+    normalized_key: visual
+    path: fixtures/raw/visual_defects.json
+  - name: acoustic-fixture
+    adapter: acoustic_json
+    normalized_key: acoustic
+    path: fixtures/raw/acoustic_features.json
+  - name: pzt-fixture
+    adapter: pzt_csv
+    normalized_key: pzt
+    path: fixtures/raw/pzt_adc.csv

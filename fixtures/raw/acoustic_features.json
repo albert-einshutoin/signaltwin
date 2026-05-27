@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-24T10:00:00+09:00",
+  "room_id": "villa-a-room-101",
+  "sample_rate_hz": 48000,
+  "feature_window_seconds": 5,
+  "frequency_response_drift": 0.19,
+  "rt60_seconds": 0.48,
+  "low_freq_resonance_shift": 0.11,
+  "high_freq_absorption_delta": 0.07,
+  "door_seal_leak_score": 0.23,
+  "unusual_noise_score": 0.14,
+  "baseline_similarity": 0.81
+}

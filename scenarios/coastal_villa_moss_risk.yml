@@ -1,0 +1,53 @@
+scenario: coastal_villa_moss_risk
+
+building:
+  id: villa-b
+  location_type: coastal
+  age_years: 5
+
+asset:
+  id: villa-b-north-exterior-wall
+  type: exterior_wall
+  orientation: north
+  material:
+    surface: painted_concrete
+    backing: reinforced_concrete
+  vulnerability:
+    moisture: medium
+    moss: high
+    salt_damage: medium
+
+maintenance:
+  last_inspection_days_ago: 210
+  last_cleaning_days_ago: 300
+  last_repaint_days_ago: 1200
+
+bms:
+  temperature_7d_avg_c: 23.8
+  humidity_7d_avg_percent: 79
+  illuminance_7d_avg_lux: 80
+  motion_hours_7d: 4
+  hvac_on_hours_7d: 62
+
+signals:
+  wifi_csi:
+    csi_drift_score: 0.11
+    snr_delta_db: -2.1
+    baseline_similarity: 0.88
+  thermal:
+    dew_point_margin_min_c: 1.8
+    cold_spot_count: 3
+    thermal_gradient_score: 0.22
+  visual:
+    detected_defects:
+      - type: moss
+        severity: 0.54
+        area_ratio: 0.12
+      - type: efflorescence
+        severity: 0.22
+        area_ratio: 0.03
+
+expected:
+  moss_risk: high
+  moisture_risk: medium
+  maintenance_recommendation: cleaning_within_45_days

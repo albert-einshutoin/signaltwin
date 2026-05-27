@@ -1,0 +1,46 @@
+{
+  "baseline_id": "adapter-fixture-baseline",
+  "bms": {
+    "dehumidify_on_hours_7d": 24.0,
+    "humidity_7d_avg_percent": 75.0,
+    "hvac_on_hours_7d": 72.0,
+    "illuminance_7d_avg_lux": 130.0,
+    "temperature_7d_avg_c": 23.8
+  },
+  "captured_at": "2026-05-01T10:00:00+09:00",
+  "signals": {
+    "acoustic": {
+      "baseline_similarity": 0.9,
+      "door_seal_leak_score": 0.12,
+      "frequency_response_drift": 0.08,
+      "high_freq_absorption_delta": 0.03,
+      "low_freq_resonance_shift": 0.05,
+      "rt60_seconds": 0.42,
+      "unusual_noise_score": 0.06
+    },
+    "pzt": {
+      "attenuation_delta": 0.1,
+      "baseline_similarity": 0.86,
+      "event_count": 1,
+      "peak_amplitude_delta": 0.08,
+      "resonance_shift_percent": 3.2
+    },
+    "thermal": {
+      "cold_spot_count": 1,
+      "dew_point_margin_min_c": 3.4,
+      "surface_temp_avg_c": 21.5,
+      "surface_temp_max_c": 23.4,
+      "surface_temp_min_c": 20.4,
+      "thermal_gradient_score": 0.14
+    },
+    "wifi_csi": {
+      "baseline_similarity": 0.92,
+      "csi_drift_score": 0.09,
+      "multipath_change_score": 0.1,
+      "packet_loss_rate": 0.015,
+      "retransmission_rate": 0.03,
+      "rssi_dbm": -58.0,
+      "snr_db": 28.1
+    }
+  }
+}

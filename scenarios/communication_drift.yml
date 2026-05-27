@@ -1,0 +1,39 @@
+scenario: wireless_propagation_drift
+
+building:
+  id: villa-a
+  location_type: mountain
+  age_years: 3
+
+asset:
+  id: room-201-ap-to-sensor-node
+  type: wireless_path
+  orientation: interior
+  material:
+    surface: mixed
+    backing: wood_and_glass
+  vulnerability:
+    communication_drift: high
+
+maintenance:
+  last_inspection_days_ago: 90
+
+bms:
+  temperature_7d_avg_c: 22.1
+  humidity_7d_avg_percent: 67
+  motion_hours_7d: 42
+  hvac_on_hours_7d: 77
+  device_on_off_changes_7d: 310
+
+signals:
+  wifi_csi:
+    csi_drift_score: 0.31
+    snr_delta_db: -7.6
+    packet_loss_rate: 0.061
+    retransmission_rate: 0.14
+    multipath_change_score: 0.29
+    baseline_similarity: 0.69
+
+expected:
+  communication_drift_risk: high
+  maintenance_recommendation: inspect_ap_position_or_interference

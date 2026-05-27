@@ -1,0 +1,24 @@
+{
+  "asset_id": "room-101-north-wall",
+  "risk_scores": {
+    "moisture_risk": 0.78,
+    "mold_risk": 0.66,
+    "wood_deformation_risk": 0.41,
+    "crack_or_void_risk": 0.35,
+    "communication_drift_risk": 0.36,
+    "comfort_degradation_risk": 0.58
+  },
+  "evidence": [
+    "7-day average humidity is 82%",
+    "The asset is a north-facing cedar panel wall",
+    "Thermal dew point margin is only 1.2°C",
+    "PZT attenuation increased by 21% from baseline",
+    "CSI drift is higher than normal baseline",
+    "Last inspection was 180 days ago"
+  ],
+  "recommendation": {
+    "priority": "high",
+    "action": "Inspect the north wall and verify dehumidification operation within 30 days",
+    "maintenance_type": "moisture_inspection"
+  }
+}

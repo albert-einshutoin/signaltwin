@@ -1,0 +1,2 @@
+timestamp,room_id,temperature_7d_avg_c,humidity_7d_avg_percent,illuminance_7d_avg_lux,hvac_on_hours_7d,dehumidify_on_hours_7d
+2026-05-24T10:00:00+09:00,villa-a-room-101,24.2,82,110,88,36

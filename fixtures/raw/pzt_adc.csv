@@ -1,0 +1,6 @@
+timestamp,sensor_id,asset_id,sample_rate_hz,mode,baseline_id,sample_index,voltage,resonance_shift_percent,attenuation_delta,baseline_similarity
+2026-05-24T10:00:00+09:00,pzt-wall-a,room-101-north-wall,860,passive_or_tap_test,dry-wall-baseline,0,0.02,6.8,0.21,0.71
+2026-05-24T10:00:00+09:00,pzt-wall-a,room-101-north-wall,860,passive_or_tap_test,dry-wall-baseline,1,0.08,6.8,0.21,0.71
+2026-05-24T10:00:00+09:00,pzt-wall-a,room-101-north-wall,860,passive_or_tap_test,dry-wall-baseline,2,0.16,6.8,0.21,0.71
+2026-05-24T10:00:00+09:00,pzt-wall-a,room-101-north-wall,860,passive_or_tap_test,dry-wall-baseline,3,0.11,6.8,0.21,0.71
+2026-05-24T10:00:00+09:00,pzt-wall-a,room-101-north-wall,860,passive_or_tap_test,dry-wall-baseline,4,0.04,6.8,0.21,0.71

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-05-24T10:00:00+09:00",
+  "image_id": "inspection-wall-north-001",
+  "asset_id": "room-101-north-wall",
+  "image_path": "images/villa-a/north-wall/001.jpg",
+  "detected_defects": [
+    {
+      "type": "moss",
+      "severity": 0.42,
+      "area_ratio": 0.08
+    },
+    {
+      "type": "hairline_crack",
+      "severity": 0.28,
+      "length_m": 1.4
+    }
+  ]
+}
