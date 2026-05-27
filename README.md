@@ -6,6 +6,19 @@ SignalTwin is a **Building Health Forecast Engine** that uses existing BMS time-
 
 SignalTwin does **not** replace BMS. It uses BMS as an input layer and adds a higher-level interpretation layer for building health.
 
+## Project Status
+
+SignalTwin is a pre-1.0 MVP. The verified path is local, hardware-free, and fixture-based:
+
+- YAML scenario validation
+- typed normalization
+- rule-based risk scoring
+- JSON, Markdown, and RoomCI-compatible exports
+- fixture adapter contracts for assumed BMS and signal sources
+- static API/dashboard example contracts
+
+It is not a production BMS, field safety system, or deployed monitoring service.
+
 ## Core Positioning
 
 ```txt
@@ -115,15 +128,50 @@ or future device-specific adapters. The contract is managed in
 `docs/device-io-assumptions.md`; the risk engine remains unchanged when adapter
 outputs keep the same normalized keys and schema-valid payloads.
 
+## Documentation
+
+- [Documentation index](docs/README.md)
+- [Architecture](docs/architecture.md)
+- [Scenario format](docs/scenario-format.md)
+- [Adapter contract](docs/adapter-contract.md)
+- [Device I/O assumptions](docs/device-io-assumptions.md)
+- [Pre-hardware readiness](docs/pre-hardware-readiness.md)
+- [API/dashboard contract](docs/api-dashboard-contract.md)
+
+## Contributing
+
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and keep the fixture-based validation path working when changing adapters, scenarios, or risk logic.
+
+Before opening a pull request, run:
+
+```bash
+pytest
+```
+
+## Security
+
+Please read [SECURITY.md](SECURITY.md) before reporting vulnerabilities. The current project is a local MVP and does not include production API deployment, authentication, tenant isolation, or real-device safety guarantees.
+
+## License
+
+SignalTwin is released under the [MIT License](LICENSE).
+
 ## Repository Layout
 
 ```txt
+LICENSE
+CONTRIBUTING.md
+SECURITY.md
+CODE_OF_CONDUCT.md
+CHANGELOG.md
 README.md
+README.ja.md
 pyproject.toml
 src/
   signaltwin/
 tests/
 docs/
+  README.md
   architecture.md
   io-schema.md
   scenario-format.md

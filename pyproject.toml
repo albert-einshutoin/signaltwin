@@ -4,11 +4,33 @@ version = "0.1.0"
 description = "Hardware-free SignalTwin Scenario Engine MVP"
 readme = "README.md"
 requires-python = ">=3.9"
+license = { file = "LICENSE" }
+keywords = [
+  "building-health",
+  "bms",
+  "digital-twin",
+  "risk-scoring",
+  "signal-processing",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+]
 dependencies = [
   "pydantic>=2",
   "pyyaml>=6",
   "typer>=0.12",
 ]
+
+[project.urls]
+Homepage = "https://github.com/albert-einshutoin/signaltwin"
+Repository = "https://github.com/albert-einshutoin/signaltwin"
+Issues = "https://github.com/albert-einshutoin/signaltwin/issues"
+Documentation = "https://github.com/albert-einshutoin/signaltwin/blob/main/docs/README.md"
 
 [project.scripts]
 signaltwin = "signaltwin.cli:main"

@@ -6,6 +6,19 @@ SignalTwin は **Building Health Forecast Engine** です。既存の BMS 時系
 
 SignalTwin は BMS を置き換えません。BMS を入力レイヤーとして使い、その上に建物ヘルスのための高次の解釈レイヤーを追加します。
 
+## プロジェクトステータス
+
+SignalTwin は pre-1.0 の MVP です。検証済みの経路は、local、hardware-free、fixture-based です。
+
+- YAML scenario validation
+- typed normalization
+- rule-based risk scoring
+- JSON、Markdown、RoomCI 互換 export
+- 想定 BMS と信号 source の fixture adapter contract
+- static API/dashboard example contract
+
+本プロジェクトは production BMS、現場安全システム、deploy 済み monitoring service ではありません。
+
 ## コアポジショニング
 
 ```txt
@@ -104,9 +117,42 @@ python -m signaltwin.cli adapter inspect --config configs/adapter-fixtures.yml
 
 `configs/adapter-fixtures.yml` を使うと、fixture source、capture program、将来の device-specific adapter を切り替えられます。Contract は `docs/device-io-assumptions.md` で管理します。Adapter output が同じ normalized key と schema-valid payload を保つ限り、risk engine は変更しません。
 
+## ドキュメント
+
+- [Documentation index](docs/README.md)
+- [Architecture](docs/architecture.md)
+- [Scenario format](docs/scenario-format.md)
+- [Adapter contract](docs/adapter-contract.md)
+- [Device I/O assumptions](docs/device-io-assumptions.md)
+- [Pre-hardware readiness](docs/pre-hardware-readiness.md)
+- [API/dashboard contract](docs/api-dashboard-contract.md)
+
+## コントリビュート
+
+Contribute する場合は [CONTRIBUTING.md](CONTRIBUTING.md) から確認してください。Adapter、scenario、risk logic を変更する場合も、fixture-based validation path を維持してください。
+
+Pull request の前に以下を実行してください。
+
+```bash
+pytest
+```
+
+## セキュリティ
+
+脆弱性報告の前に [SECURITY.md](SECURITY.md) を確認してください。現状は local MVP であり、production API deployment、authentication、tenant isolation、real-device safety guarantee は含みません。
+
+## ライセンス
+
+SignalTwin は [MIT License](LICENSE) で公開されています。
+
 ## リポジトリ構成
 
 ```txt
+LICENSE
+CONTRIBUTING.md
+SECURITY.md
+CODE_OF_CONDUCT.md
+CHANGELOG.md
 README.md
 README.ja.md
 pyproject.toml
@@ -114,6 +160,7 @@ src/
   signaltwin/
 tests/
 docs/
+  README.md
   architecture.md
   io-schema.md
   scenario-format.md
