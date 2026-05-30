@@ -279,7 +279,7 @@ SignalTwin の技術理解を確認するための質問と模範回答です。
 89. **Q: `dict[str, Any]` が増えると何が悪くなりますか。**  
     A: 型チェックが効かず、key typo、shape mismatch、serialization boundary の曖昧さが増え、レビューとリファクタリングのコストが上がります。
 
-90. **Q: Python 3.9 以上を前提にしている場合、型設計で注意することは何ですか。**  
+90. **Q: Python 3.14 以上を前提にしている場合、型設計で注意することは何ですか。**
     A: `list[str]` や `dict[str, Any]` は使えますが、より新しい構文に依存しすぎないこと、Pydantic v2 の挙動を前提にテストすることが必要です。
 
 91. **Q: public API を作る前に artifact contract を固める利点は何ですか。**  

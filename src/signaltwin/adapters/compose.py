@@ -25,13 +25,15 @@ def compose_adapter_outputs(
         else:
             signals[output.normalized_key] = output.payload
 
-    scenario_model = SignalTwinScenario(
-        scenario=scenario,
-        building=building,
-        asset=asset,
-        maintenance=maintenance,
-        bms=bms,
-        signals=signals,
-        expected=expected,
+    scenario_model = SignalTwinScenario.model_validate(
+        {
+            "scenario": scenario,
+            "building": building,
+            "asset": asset,
+            "maintenance": maintenance,
+            "bms": bms,
+            "signals": signals,
+            "expected": expected,
+        }
     )
     return normalize_scenario(scenario_model)

@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+from typing import Any, Literal, overload
+
 from signaltwin.normalizer import NormalizedScenario, normalize_scenario
 from signaltwin.schema import Recommendation, RiskReport, RiskScores, SignalTwinScenario
+
+RecommendationPriority = Literal["low", "low_medium", "medium", "medium_high", "high"]
 
 
 def calculate_risk_report(scenario: NormalizedScenario | SignalTwinScenario) -> RiskReport:
@@ -129,7 +133,7 @@ def _moss_risk(scenario: NormalizedScenario, evidence: list[str]) -> float:
     score = 0.0
 
     if moss_defects:
-        strongest = max(_number(defect.severity, default=0.0) for defect in moss_defects)
+        strongest = max(defect.severity for defect in moss_defects)
         area = max(_number(defect.area_ratio, default=0.0) for defect in moss_defects)
         score += 0.42 + strongest * 0.25 + area
         evidence.append(f"Visual moss detection severity is {strongest:.2f}.")
@@ -318,7 +322,7 @@ def _recommendation(scores: RiskScores) -> Recommendation:
     )
 
 
-def _priority(score: float) -> str:
+def _priority(score: float) -> RecommendationPriority:
     if score >= 0.70:
         return "high"
     if score >= 0.60:
@@ -337,7 +341,15 @@ def _asset_material_hint(scenario: NormalizedScenario) -> str:
     return ""
 
 
-def _number(value: object, default: float | None = None) -> float | None:
+@overload
+def _number(value: Any, default: None = None) -> float | None: ...
+
+
+@overload
+def _number(value: Any, default: float) -> float: ...
+
+
+def _number(value: Any, default: float | None = None) -> float | None:
     if value is None:
         return default
     return float(value)

@@ -3,7 +3,7 @@ name = "signaltwin"
 version = "0.1.0"
 description = "Hardware-free SignalTwin Scenario Engine MVP"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.14"
 license = { file = "LICENSE" }
 keywords = [
   "building-health",
@@ -21,9 +21,9 @@ classifiers = [
   "Topic :: Scientific/Engineering",
 ]
 dependencies = [
-  "pydantic>=2",
-  "pyyaml>=6",
-  "typer>=0.12",
+  "pydantic>=2.13.4",
+  "pyyaml>=6.0.3",
+  "typer>=0.26.3",
 ]
 
 [project.urls]
@@ -37,11 +37,12 @@ signaltwin = "signaltwin.cli:main"
 
 [project.optional-dependencies]
 test = [
-  "pytest>=8",
+  "pytest>=9.0.3",
 ]
 dev = [
-  "mypy>=1.10",
-  "ruff>=0.5",
+  "mypy>=2.1.0",
+  "ruff>=0.15.15",
+  "types-pyyaml>=6.0.12.20260518",
 ]
 
 [tool.pytest.ini_options]
@@ -50,4 +51,4 @@ testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py39"
+target-version = "py314"

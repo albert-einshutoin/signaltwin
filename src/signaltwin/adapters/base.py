@@ -11,6 +11,7 @@ from signaltwin.schema import (
     AcousticSignal,
     BmsContext,
     PztSignal,
+    StrictBaseModel,
     ThermalSignal,
     VisualSignal,
     WifiCsiSignal,
@@ -40,7 +41,7 @@ class AdapterOutput:
     normalized_key: NormalizedKey
     payload: dict[str, Any]
 
-    _payload_models: ClassVar[dict[str, type]] = {
+    _payload_models: ClassVar[dict[NormalizedKey, type[StrictBaseModel]]] = {
         "bms": BmsContext,
         "wifi_csi": WifiCsiSignal,
         "pzt": PztSignal,
